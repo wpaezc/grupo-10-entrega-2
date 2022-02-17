@@ -45,6 +45,4 @@ class Checkout < Sinatra::Base
       response.body = session.body.to_json
     end
   end
-
-  run!
 end
