@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "3dc65865-91d7-4b00-b43a-cf4bd9e3e9dc",
+		"name": "proyecto-e2-checkouts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{server}}/checkouts/health/ping",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"checkouts",
+						"health",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create checkout - Bad session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\": \"bad-session\",\n    \"item\": {\n        \"uuid\": \"{{productId}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{server}}/checkouts",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"checkouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create checkout - Bad Product ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\": \"{{sessionId}}\",\n    \"item\": {\n        \"uuid\": \"bad-product\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{server}}/checkouts",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"checkouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\": \"{{sessionId}}\",\n    \"item\": {\n        \"uuid\": \"{{productId1}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{server}}/checkouts",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"checkouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create checkout - Proveedor sin disponibilidad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\": \"{{sessionId}}\",\n    \"item\": {\n        \"uuid\": \"{{productId1}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{server}}/checkouts",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"checkouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create checkout - Segundo pago",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\": \"{{sessionId}}\",\n    \"item\": {\n        \"uuid\": \"{{productId2}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{server}}/checkouts",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"checkouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create checkout - Tercer pago",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\": \"{{sessionId}}\",\n    \"item\": {\n        \"uuid\": \"{{productId3}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{server}}/checkouts",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"checkouts"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "http"
+		},
+		{
+			"key": "server",
+			"value": "0.0.0.0:3000"
+		},
+		{
+			"key": "sessionId",
+			"value": "dc7391c3-8228-4128-b75f-07c939256b43"
+		},
+		{
+			"key": "productId1",
+			"value": "143ef613-6d62-4158-a2ed-6164887b3146"
+		},
+		{
+			"key": "productId2",
+			"value": "042908f7-d4fa-4c75-90ab-3ab57808e841"
+		},
+		{
+			"key": "productId3",
+			"value": "61d78280-dffa-4a98-bc64-d155f54082b2"
+		}
+	]
+}

@@ -45,4 +45,8 @@ class Checkout < Sinatra::Base
       response.body = session.body.to_json
     end
   end
+
+  get '/checkouts/health/ping' do
+    'pong'
+  end
 end
